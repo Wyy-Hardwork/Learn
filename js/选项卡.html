@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ol>
+    </div>
+    <script>
+        var btns = document.querySelectorAll('ul>li') //ul下的所有li
+        var tabs = document.querySelectorAll('ol>li') //ol下所有li
+        btns.forEach(function(item, index) {
+            item.onclick = function() {
+                //因为要加样式，没完成
+            }
+        })
+    </script>
+</body>
+
+</html>

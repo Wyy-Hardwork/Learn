@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // prototype是每个函数天生自带的对象，我们可以用这个自带的空间
+        // 利用对象操作语法，向里面添加一些内容
+        // 每一个对象，在你访问它成员时候，若自己没这个属性，
+        // 那么自动去所属的构造函数的prototype上查找
+
+        // 构造函数创建对象的过程，叫做 实例化 的过程
+        // 创建出来的对象叫做构造函数的一个 实例化对象
+        function Person() {}
+        Person.prototype.yeah = 5
+        Person.prototype.ac = function() {
+            console.log('方法！')
+        }
+        var p1 = new Person()
+        console.log(p1.yeah)
+            //我访问p1某个成员，没找着，那么会尝试去到原型prototype里面找
+        var p2 = new Person()
+        p2.ac()
+            //实例化p2，在prototype里找到了ac方法
+            //原型就是用来给每一个实例提供初始方法的，不会出现浪费内存
+    </script>
+</body>
+
+</html>

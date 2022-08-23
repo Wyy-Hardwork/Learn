@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+                // this.sayHi = function(){console.log('!!')} 创建对象越多，这行代码占用空间越大
+        }
+        p1.Person('aa', 18)
+        p2.Person('bb', 11)
+            //为什么会反复占用内存？
+            // p1第一次执行Person函数， 会把函数内部this指向p1
+            // 然后执行一遍函数内部所有代码， 包括那个function
+            // 给p1加上了name， age属性
+            // 然后给p1加上sayHi方法，但是会新创建一个函数出来
+
+        // p2的sayHi完全可以跟p1共用而不是创建一个新函数出来，这样占内存
+    </script>
+</body>
+
+</html>

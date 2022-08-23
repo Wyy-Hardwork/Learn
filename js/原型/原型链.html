@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父类
+        class Person {
+            constructor(name){
+                this.name = name;
+            }
+            drink(){
+                console.log('喝水!')
+            }
+        }
+        //学生
+        class Student extends Person{
+            constructor(name,score) {//constructor其实没有什么用处，另外constractor在终端用来显示构造函数
+                // 只是JavaScript语言设计的历史遗留物。
+                // 由于constructor属性是可以变更的，
+                // 所以未必真的指向对象的构造函数，只是一个提示。
+                // 不过，从编程习惯上，我们应该尽量让对象的constructor指向其构造函数，以维持这个惯例。
+
+                super(name)
+                this.score = score;
+            }
+            
+            introduce(){
+                    console.log(`我是${this.name},考了${this.score}分`)
+                }
+        }
+        const student = new Student('张三',99)
+        console.log(student)
+        student.introduce()
+        student.drink()
+//老师
+        class Teacher extends Person{
+            constructor(name,teach)  {
+                super(name)
+                this.teach = teach;
+            }
+            
+            iteach(){
+                    console.log(`我是${this.name},教了${this.teach}`)
+                }
+        }
+        const teacher = new Teacher('老白','数学')
+        console.log(teacher)
+        teacher.iteach()
+
+        if(student.__proto__ === Student.prototype)//原型链
+        // console.log('true')
+
+        teacher.hasOwnProperty('teach')//检验属性或方法是否在自己身上
+
+        // 最终指向 Object.prototype,它的__proto__是null
+        //instanceof是根据原型链来判断类型的,另外constractor在终端用来显示构造函数的
+    </script>
+</body>
+</html> 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 接面向对象的最后一个构造方法，和new连用 -->
+    <!-- 书写构造函数，首字母大写比较规范，知道你用的是构造方法 -->
+    <script>
+        function person() {
+            console.log('yeah')
+        }
+
+        function Person() {
+            this.name = 'Hina'
+                //这里面用return没有意义，它不会返回任何东西
+                //但是你return比较复杂的东西，如数组或方法，那你方法又没意义了
+                //总之别写return
+        }
+
+        var obj = new Person()
+        console.log('obj') //正常返回
+
+        var obj1 = Person()
+        console.log('obj1') //返回undefined（没创建又没返回，怎么给你东西）
+
+        // 另外如果没有参数传递，方法小括号可以不写，但是不推荐
+        //现在看到this应该自动联想创建对象并返回值
+    </script>
+</body>
+
+</html>

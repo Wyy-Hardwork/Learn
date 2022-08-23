@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul style="background-color: wheat;">
+        <li style="background-color: white; width: 50px;">1</li>
+        <li style="background-color: white; width: 50px">2</li>
+        <li style="background-color: white; width: 50px">3</li>
+    </ul>
+</body>
+
+<script>
+    var ul = document.querySelector('ul')
+    ul.onclick = function() {
+        ul.onclick = function(e) {
+            if (e.target.tagName == 'LI') { //tagName必须大写
+                console.log('你点的li!')
+            } else {
+                console.log('ul触发')
+            }
+        }
+    }
+</script>
+
+
+</html>

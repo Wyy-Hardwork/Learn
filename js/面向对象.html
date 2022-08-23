@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 面向过程，我们要关注每一个步骤与细节
+    面向对象，我们只关心有没有对象能帮我们完成任务，核心是高内聚低耦合，也就是面向过程的高度封装 -->
+<!-- 先创建对象 -->
+
+<body>
+    <script>
+        //    var obj = {...}
+        //     var obj = {
+        //         name: 'Hina',
+        //         age: 17,
+        //         sayHi: function() {
+        //             console.log('sensei!')
+        //         }
+        //     }
+        //     var obj1 = {
+        //         name: 'Miyu',
+        //         age: 16,
+        //         sayHi: function() {
+        //             console.log('sensei...')
+        //         }
+        //     }
+
+        //     // 内置构造函数创建对象
+        //     var ob = new Object()
+        //     ob.name = 'hifumi'
+        //     ob.age = 16
+        //     ob.sayHi = function() {
+        //         console.log('sensei!')
+        //     }
+
+        //     // 工厂函数创建对象
+        //     // 1.制造工厂函数
+        //     // 2.使用工厂函数创建对象 -->
+        // function create(name, age) { //形参接收的实参传到后面那个name和age
+        //     var obj = {}
+        //     obj.name = name
+        //     obj.age = age
+        // return obj
+        // }
+        // var obb1 = create('Mika', 17)
+        // var obb2 = create('maki', 16)
+        // console.log(obb1, obb2)
+
+        //自定义构造函数创建对象,自动创建对象，自动返回对象
+        function createObj(name, age) {
+            this.name = name
+            this.age = age
+        }
+        var obj1 = new createObj('hina', 17)
+        var obj2 = new createObj('mika', 17)
+        console.log(obj1, obj2)
+            // new似乎成了一个，被return的，且只需要this.的空数组模板，跟上一个的obj很像
+            // new,这个叫自动创建和返回对象的能力
+    </script>
+</body>
+
+</html>

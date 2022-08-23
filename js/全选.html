@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox">全选<br>
+        <hr>
+        <input type="checkbox">选项1<br>
+        <input type="checkbox">选项2<br>
+        <input type="checkbox">选项3<br>
+        <input type="checkbox">选项4<br>
+    </div>
+    <script>
+        var allBtn = document.querySelector('input')
+        var items = document.querySelectorAll('input:nth-child(n + 2)')
+        console.log(allBtn)
+        console.log(items)
+        allBtn.onclick = function() {
+            var type = allBtn.checked //check是选中状态
+                // console.log(type) type用于检测checkbox的选中状态，返回true或flase
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = type
+            }
+        }
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                var flag = true
+                for (var j = 0; j < items.length; j++) {
+                    if (items[j].checked == false) {
+                        flag = false
+                        break
+                    }
+                }
+                // console.log(flag)检测选项的统一
+                allBtn.checked = flag
+            }
+        }
+    </script>
+</body>
+
+</html>
