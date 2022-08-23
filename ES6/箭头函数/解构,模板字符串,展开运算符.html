@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组
+        var arr = ['hello','world']
+        var [a,b] = arr//按索引进行匹配
+
+        var obj = {name:'jack',age:18}
+        var {age:a} = obj//定义a变量,是从obj内获取一个叫age的值
+
+        var age = 18
+        var s1 = `需要变量${age}`//模板字符串
+        console.log(s1)
+
+        var arr1 = [1,2,3]
+        var arr2=[4,5,6]
+        var ar = [...arr1,...arr2]//合并数组,不对!这里是指明对象内容位置,来自学vue一段时间后!
+        var max = Math.max(ar)
+        //...(展开运算符)就相当于去括号,可以在赋值等东西上用,为了方便(相同成员会覆盖要注意)
+    </script>
+</body>
+</html>

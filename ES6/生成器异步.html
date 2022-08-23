@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function * gen(){//*和迭代器有关,不加一个*不能用next()
+            let one = yield '日奈';
+            console.log(one);
+            yield '日富美';
+            yield '小天城'
+        }
+        let x = gen();
+        console.log(x.next());
+        console.log(x.next('我好像替换了日奈!'));
+        console.log(x.next());
+        //这样返回对象
+
+        //这样遍历数组,返回文本
+        for(let v of gen()){
+            console.log(v);//yield算代码分块,但貌似只对next()有用,防止一次把整块都输出了
+        }
+    </script>
+</body>
+</html>

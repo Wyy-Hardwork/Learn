@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //rest参数用于获取函数的实参,来代替arguments
+        // function date(){
+        //     console.log(arguments)//返回一个伪数组,可用下标准确定位
+        // }
+        // date('a','b','c')
+
+        function date(...args){//...args只能放最后,在传入多个实参时候,args会形成一个数组来容纳多余数
+            console.log(args);//返回一个数组,可用下标准确定位;因为是数组,所以filter/some/every/map
+        }
+        date('a','b','c')
+        // 以上是rest参数
+
+        const arry = ['xx','yy','zz'];
+        function fn(){
+            console.log(arguments)
+        }
+        fn(...arry);//与rest不同,spread把省略号写在了实参里
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function name(){
+            setTimeout(()=>{
+                let data = '日奈'
+                //调用next,将数据传入
+                x.next(data)//二次调用
+            },1000)
+        }
+        function sex(){
+            setTimeout(()=>{
+                let data = '做过了'
+            },1000)
+        }
+        function like(){
+            setTimeout(()=>{
+                let data = '老师'
+            },1000)
+        }
+        function * gen(){
+            let names = yield name();
+            console.log(names);//输出
+            yield sex();
+            yield like();
+        }
+        let x = gen();
+        x.next()//一次调用
+        //这样功能似乎把异步转同步了
+    </script>
+</body>
+</html>

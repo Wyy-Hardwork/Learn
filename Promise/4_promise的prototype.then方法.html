@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p =    new Promise((resolve, reject)=> {
+            setTimeout(()=>{
+                let data = '外层正常输出 return1'
+                // resolve(data);
+
+                let err = '发生错误'
+                reject(err)
+            },1000)
+        }).then((value)=>{
+            console.log(value);
+            return 1
+
+        },
+                (reason)=>{
+            console.error(reason)
+
+        }).then((value)=>{
+            console.log('我是内层then成功输出 return2');
+            return 2
+            //关于链式回调中的return,只会跟随最新的then的状态state和结果result(return)
+            //如果不写promise判断好像默认只出第一个,所以用到catch来做错误?
+        },
+        //(reason)=>{
+        //   console.error('我是内层then错误输出');
+        //因为只对第一个有效,所以这个error写了跟没写一样
+        // }
+        )
+        //另外要是只有错误,可以用catch来抛出,这样就省的写两个函数了
+        p.catch((reason)=>{
+            console.log('等你们错误,我是catch');
+        })
+        console.log(p);
+    </script>
+</body>
+</html>

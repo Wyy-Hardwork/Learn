@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sy = Symbol('sss')
+        console.log(sy);
+        typeof(sy);
+        let dy = Symbol('sss');
+        console.log(sy === dy);//独一无二的地址
+
+        let x = 'w'
+        let y = 'w'
+        console.log(x === y);//同样的值指向同样的地址
+
+        //Symbol 作为对象属性名时不能用.运算符，要用方括号
+        let duixiang = {
+            ww : 'pink'
+        }
+        duixiang[sy] = 'symbol';
+        console.log(duixiang[sy]);//symbol
+        console.log(duixiang.sy);//undefined
+        console.log(duixiang);
+
+        //不能与其他数据运算
+        // let ax = sy + 100 //是错误的
+
+        //Symbol作为属性,是公有属性,可以再类的外部访问.
+        //不会出现在 for...in 、 for...of 的循环中，
+        //也不会被 Object.keys() 、 Object.getOwnPropertyNames() 返回
+
+        //在对象中使用symbol
+        let youxi = {
+            [Symbol('say')] : function(){
+                console.log('把Symbol作为属性名要打中括号');
+            }
+        }
+        console.log(youxi);
+    </script>
+</body>
+</html>

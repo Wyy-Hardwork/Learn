@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const school = {
+            name : '格黑娜',
+            stus :[
+                '日奈',
+                '佐仓',
+                '无月',
+                '亚瑠',
+            ],
+            [Symbol.iterator](){
+                let index = 0;
+                let _this = this;
+                return{
+                    next : function(){
+                        if(index <_this.stus.length){
+                            return {value :_this.stus[index],done:false}
+                            //value属性返回当前位置的成员，done属性是一个布尔值，表示遍历是否结束，即是否还有必要再一次调用next()。false没结束,true结束了
+                            index++
+                            // return result;
+                        }else{
+                            return{value:undefined,done:true}
+                        }
+                    }
+                }
+            }
+        }
+        //遍历这个数组
+        for(let v of school.stus){
+            console.log(v);
+        }//这个算上面Symbol.iterator的原理吧
+
+        //ES6 规定，默认的 Iterator 接口部署在数据结构的Symbol.iterator属性上。
+        //next()返回一个对象，表示当前数据成员的信息。这个对象具有value和done两个属性
+
+        // const arryIterator = [1,2][Symbol.iterator]();
+        // //对象内定义了一个Symbol类型且描述符为Symbol.iterator的属性名，指向Iterator函数
+        // console.log(arryIterator);
+        // console.log(arryIterator.next());
+        // console.log(arryIterator.next());
+        // console.log(arryIterator.next());
+
+    </script>
+</body>
+</html>

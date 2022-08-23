@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击发送</button>
+    <button>点击取消</button>
+<script>
+            const btns = document.querySelectorAll('button')
+            let x = null;
+            let isSending = false; //判断是否发送
+            btns[0].onclick = function(){
+            if(isSending) x.abort();
+            x = new XMLHttpRequest(); //刚才const了x,导致不能重复new
+            isSending = true;
+            x.open('GET', 'http://127.0.0.1:8000/delay');
+            x.send();
+            x.onreadystatechange = function(){
+                if(x.readyState === 4){
+                    // if(x.status === 200){ //重复请求取消不需要状态码,因为可能本来就是不通过状态码
+                        
+                        console.log(x.response);
+                        isSending = false;
+                // }
+            }
+        }
+        // btns[1].onclick = function(){
+        //     x.abort(); //手动取消当前请求
+        // }
+    }
+</script>
+</body>
+</html>

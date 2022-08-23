@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function add(a,b,c=10){
+    //     return a+b+c;
+    // }
+    // let result = add(1,2);//c如果没初始值是undefined,没定义相加NaN
+    // console.log(result);
+
+    //与解构赋值结合
+    function connect({host = '127.0.0.1',username,password}){//把对象属性直接写进小括号,并用大括号框起来
+        console.log(host);
+    }
+    connect ({
+        host: 'localhost',
+        username: 'root',
+        password: 'password'
+    })
+    // 一种对象调用,数组的传参写法
+
+    
+</script>
+</body>
+</html>

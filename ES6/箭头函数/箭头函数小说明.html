@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let,const不允许初始化前使用
+        // var同名重写会覆盖,而它俩不行,需要唯一
+        // 块级作用域,即同一个if的{}内使用
+
+        //let声明后可以更改,const声明后不行
+
+        var fn1 = function(){}
+        var fn2 = ()=>{}//箭头函数
+
+        //当形参只有一个可以省略小括号
+        var fn3 = ()=>{}
+        var fn4 = a =>{}//只能一个,多了记得加括号
+
+        //一句话的函数可以不写大括号
+        var fn5 =(a,b) => a+b //自带return
+
+        //箭头函数没有argument
+
+        //箭头函数没有this
+        var obj ={
+            fn:function(){console.log(this)}
+            // fn2:() =>{console.log()} 报错
+        }
+
+    </script>
+</body>
+</html>

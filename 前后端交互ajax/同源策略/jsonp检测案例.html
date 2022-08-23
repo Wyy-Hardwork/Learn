@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    用户名:<input type="text" id="'username">
+    <p></p>
+    <script>
+        const input = document.querySelector('input');
+        const p = document.querySelector('p');
+        //获取input函数
+        function handle(data){
+            input.style.border = "solid 1px red"
+            p.innerHTML = data.msg;
+        }
+        input.onblur = function() {
+            //获取输入值
+            let username = this.value;
+            //加入script标签用于引入
+            const script = document.createElement('script');
+            script.src = "http://127.0.0.1:9000/check-server";
+            document.body.appendChild(script);//script标签插入尾部
+        }
+    </script>
+</body>
+</html>

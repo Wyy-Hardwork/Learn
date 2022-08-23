@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ${变量名}用来替换变量,记得用``包起来 -->
+
+    <script>
+        function add(a = 10, b = 20) {//赋的是默认值,在没有传参时候
+            return a + b;
+        }
+        function checkArgs(...args) {//...数组名,偷懒写法,还会给个length
+            console.log(args);
+        }
+        checkArgs('a','b','c')
+        console.log(typeof(checkArgs[0]))
+        // console.log(Math.max(...shuzu)) 可以用来把数字数组排序,使用方式同上...数组名
+
+        //箭头函数
+        var c = (a,b)=>{//多个参数打括号
+            return a+b;
+        }
+        var d = z=>{//一个参数不打括号
+            return z=3;
+        }
+        // 当然如果你只有return一句话(闭包用来return),还有更简单的写法,那就是一个小括号
+        var e = x =>(x = 5)
+        
+        // let fn = (function(){
+        //     return function(){
+        //         return function(){
+        //             console.log('闭包加箭头');//例子懒得写了==
+        //         }
+        //     }
+        // })
+
+        //箭头函数this是静态的,this始终指向函数声明时所在作用域下的this的值
+        function getName(){
+            console.log(this.name);
+        }
+        let getName1 =() =>{
+            console.log(this.name);
+        }
+        window.name = 'window wyy'
+        const school = {
+            name : '对象name'
+        }
+        getName.call(school);
+        getName1.call(school);//没变化,由此可见箭头函数只指向声明时候的作用域
+
+        //箭头函数不能作为构造实例化对象(不能new)
+        // let Person = (name)=>{
+        //     this.name =name;
+        // }
+        // let me = new Person('hina')
+        // console.log(me);//报错
+
+        //不能使用argument
+        //上面提到的一个形参可以不写小括号,只有一条语句省略花括号,return语句可以省略return这个单词
+    </script>
+</body>
+
+</html>

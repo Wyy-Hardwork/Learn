@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let是块作用域 
+        //不能重复声明
+        //没有变量提升
+        //const声明常量,一旦声明无法修改,但是可以修改内部属性
+        const a = {
+            a : '66'
+        }
+        a.a = 'fuck'
+        console.log(a);
+        // a = {
+        //     a  : 20
+        // }改对象也是不行的
+
+        //另外关于for循环的settimeout问题,因为js是单线程执行,先执行同步,再执行异步;理解成把for分解成了
+        //多块函数,这样就能理解,为什么var声明会变成一个数,setimeout会同一时间输出了
+        //(不想同时输出可以用time*i,因为是异步的,所有段函数在同时运行,只能用越来越大的时间了)
+
+        //let不会污染全局变量,即使在在最外部声明,window.xx也不会被污染(全局属性)
+    </script>
+</body>
+</html>

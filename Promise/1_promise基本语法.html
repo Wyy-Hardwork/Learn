@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise((resolve, reject)=> {
+            setTimeout(()=>{
+                // let data = '数据库中数组'
+                // resolve(data);
+
+                let err = '发生错误'
+                reject(err)
+            },1000)
+        }).then((value)=>{
+            console.log(value);
+        },
+                (reason)=>{
+            console.error(reason)
+        })
+
+        //promise里面放俩回调函数,
+        //用于对正确和错误值,在then和catch里进行分别输出
+    </script>
+</body>
+</html>

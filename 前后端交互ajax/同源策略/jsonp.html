@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #result {
+            width: 500px;
+            height: 500px;
+            border: solid 1px blue;
+        }
+    </style>
+    <div id="result"></div>
+    <script>
+        function handle(data) {
+            const result = document.getElementById('result')
+            result.innerHTML = data.name;
+        }//该函数需要提前声明,不然js里调函数调不到
+    </script>
+    <!-- <script
+        src="http://127.0.0.1:5500/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92ajax/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/app.js">
+        </script> -->
+        <script src = "http://127.0.0.1:9000/jsonp-server">
+
+        </script>
+</body>
+
+</html>
